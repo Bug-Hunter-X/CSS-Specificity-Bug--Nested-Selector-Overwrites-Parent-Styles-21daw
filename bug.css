@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors.  The intention is to style elements with class "container" differently depending on the presence of a nested element with class "inner". However, due to CSS specificity rules, the rule targeting ".container .inner" may inadvertently overwrite styles set by ".container".
+
+```css
+.container {
+  background-color: lightblue;
+}
+
+.container .inner {
+  background-color: lightcoral;
+}
+```
