@@ -1,0 +1,31 @@
+To resolve the specificity issue, several approaches can be taken, all focused on ensuring the desired styles are applied correctly.  Here are a couple of solution methods:
+
+**Method 1: Using the `!important` flag (generally discouraged):**
+
+While not best practice, using `!important` can force the parent's styles to take precedence. However, this is generally discouraged because it reduces code maintainability and can lead to harder-to-debug conflicts.
+
+```css
+.container {
+  background-color: lightblue !important;
+}
+
+.container .inner {
+  background-color: lightcoral;
+}
+```
+
+**Method 2 (Recommended): Increasing the specificity of the parent selector**
+
+This method avoids `!important` and is a cleaner solution.  We add an extra class to the container element, which increases the specificity of the selector, ensuring it has higher precedence over the nested `.inner` selector.
+
+```css
+.container-parent {
+  background-color: lightblue;
+}
+
+.container-parent .inner {
+  background-color: lightcoral;
+}
+```
+
+This ensures that the parent styles apply correctly while allowing the child element to have its own unique styles. This method is generally preferred for better code maintainability and scalability.
